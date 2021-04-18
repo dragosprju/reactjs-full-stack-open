@@ -2,18 +2,13 @@ import React from 'react'
 import Part from './Part'
 
 const Content = (props) => {
-  const part1 = props.part1
-  const exercises1 = props.exercises1
-  const part2 = props.part2
-  const exercises2 = props.exercises2
-  const part3 = props.part3
-  const exercises3 = props.exercises3
+  const parts = props.parts
 
   return (
     <div>
-      <Part part={part1} exercises={exercises1} />
-      <Part part={part2} exercises={exercises2} />
-      <Part part={part3} exercises={exercises3} />
+      <Part part={parts[0].name} exercises={parts[0].exercises} />
+      <Part part={parts[1].name} exercises={parts[1].exercises} />
+      <Part part={parts[2].name} exercises={parts[2].exercises} />
     </div>
   )
 }
