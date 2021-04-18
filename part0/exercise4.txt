@@ -1,0 +1,47 @@
+title Untitled
+
+note over browser:
+user writes note, for example "hello"
+end note
+
+note over browser:
+user presses send
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+HTTP POST request contains form data with
+an entry called "note" containing "hello" as value
+end note
+
+note over server:
+server updates data.json, appending "hello"
+end note
+
+server-->browser: Response of code 302
+
+note over browser:
+302 response implicitly means a redirect instruction. 
+Redirect location is referring to /notes of website.
+end note
+
+note over browser:
+Browser redirects itself to https://studies.cs.helsinki.fi/exampleapp/notes
+which means it's basically refreshing the same page since it was
+already on https://studies.cs.helsinki.fi/exampleapp/notes
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: data.json containing [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
