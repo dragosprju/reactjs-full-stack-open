@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Statistic = (props) => {
   // save clicks of each button to its own state
   const text = props.text
   const value = props.value
   
-
   return (
     <div>
       {text} {value}<br />
@@ -13,4 +12,4 @@ const Statistic = (props) => {
   )
 }
 
-export default Statistics
+export default Statistic
