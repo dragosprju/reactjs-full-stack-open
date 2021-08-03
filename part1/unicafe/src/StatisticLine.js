@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Statistic = (props) => {
+const StatisticLine = (props) => {
   // save clicks of each button to its own state
   const text = props.text
   const value = props.value
@@ -12,4 +12,4 @@ const Statistic = (props) => {
   )
 }
 
-export default Statistic
+export default StatisticLine
