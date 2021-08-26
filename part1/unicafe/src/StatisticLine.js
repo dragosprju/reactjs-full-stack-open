@@ -6,9 +6,14 @@ const StatisticLine = (props) => {
   const value = props.value
   
   return (
-    <div>
-      {text} {value}<br />
-    </div>
+    <tr>
+      <td>
+        {text}
+      </td>
+      <td>
+        {value}
+      </td>
+    </tr>
   )
 }
 
