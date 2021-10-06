@@ -6,6 +6,13 @@
     "configurations": [
         {
             "command": "react-scripts start",
+            "name": "part1/anecdotes",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/part1/anecdotes"  
+        },
+        {
+            "command": "react-scripts start",
             "name": "part1/unicafe",
             "request": "launch",
             "type": "node-terminal",
