@@ -1,0 +1,26 @@
+title Exercise 6
+
+note over browser:
+User writes note, for example "how's it going?"
+end note
+
+note over browser:
+User presses "Send" button
+end note
+
+
+browser->server: HTTP POST request containing JSON data: [{content: "how's it going?", date: "2021-10-06T21:00:00.000Z"}]
+
+
+note over server:
+server updates data.json, appending "how's it going?" to data.json
+end note
+
+server->browser: HTTP POST response 201, containing JSON data: [{message: "note created"}]
+
+note over browser:
+SPA adds "how's it going?" to notes itself.
+It does NOT reload all notes from data.json
+again since it did not download data.json again
+after user pressed "Send" button
+end note

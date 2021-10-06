@@ -1,25 +1,32 @@
-title Untitled
+title Exercise 4
 
 note over browser:
-user writes note, for example "hello"
+User writes note, for example "hello"
 end note
 
 note over browser:
-user presses send
+User presses "Send" button
 end note
 
-browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over browser:
+HTTP POST request is initiated, 
+containing the form key-value data:
+note=hello
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note, with data "note=hello"
 
 note over server:
-HTTP POST request contains form data with
-an entry called "note" containing "hello" as value
+Server receives HTTP POST request with
+the following key-value data:
+note=hello
 end note
 
 note over server:
 server updates data.json, appending "hello"
 end note
 
-server-->browser: Response of code 302
+server-->browser: Response code 302
 
 note over browser:
 302 response implicitly means a redirect instruction. 
@@ -28,8 +35,7 @@ end note
 
 note over browser:
 Browser redirects itself to https://studies.cs.helsinki.fi/exampleapp/notes
-which means it's basically refreshing the same page since it was
-already on https://studies.cs.helsinki.fi/exampleapp/notes
+which basically means it's refreshing itself to the same page it's on already
 end note
 
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
@@ -37,9 +43,15 @@ server-->browser: HTML-code
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
 server-->browser: main.css
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+note over browser:
+Browser starts executing the JS-code,
+that requests the JSON data from the server
+end note
+
 server-->browser: main.js
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
-server-->browser: data.json containing [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.js
+server-->browser: data.json containing [{ content: "hello", date: "2021-10-05" }, ...]
 
 note over browser:
 browser executes the event handler
