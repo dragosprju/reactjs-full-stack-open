@@ -5,8 +5,9 @@ const App = () => {
     return Math.floor(Math.random() * max);
   }
   
-  function setSelectedToRandom(max) {
-    return setSelected(getRandomInt(max))
+  function setRandomAnecdote() {
+    let max = anecdotes.length
+    setAnecdote(getRandomInt(max))
   }
 
   const anecdotes = [
@@ -19,13 +20,13 @@ const App = () => {
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients'
   ]
    
-  const [selected, setSelected] = useState(0)
+  const [selected, setAnecdote] = useState(0)
 
   return (
     <div>
       {anecdotes[selected]} <br />
 
-      <button onClick={setSelected(5)}>next anecdote</button>
+      <button onClick={setRandomAnecdote}>next anecdote</button>
     </div>
   )
 }
