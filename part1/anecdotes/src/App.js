@@ -18,6 +18,20 @@ const App = () => {
     setNoOfVotes(noOfVotesNew)
   }
 
+  function getAnecdoteWithMostVotes() {
+    let anecdoteWithMostVotes = 0
+    let mostVotes = 0
+
+    for (let i = 0; i < anecdotes.length; i++) {
+      if (noOfVotes[i] > mostVotes) {
+        anecdoteWithMostVotes = i
+        mostVotes = noOfVotes[i]
+      }
+    }
+    
+    return anecdoteWithMostVotes
+  }
+
   const anecdotes = [
     'If it hurts, do it more often',
     'Adding manpower to a late software project makes it later!',
@@ -33,12 +47,19 @@ const App = () => {
 
   return (
     <div>
+      <h1>Anecdote of the day</h1>
+
       {anecdotes[selected]} <br />
       has {noOfVotes[selected]} votes <br />
 
       <button onClick={increaseVote}>vote</button>
       <button onClick={setRandomAnecdote}>next anecdote</button>
       
+      <h1>Anecdote with most votes</h1>
+
+      {anecdotes[getAnecdoteWithMostVotes()]} <br />
+      has {noOfVotes[getAnecdoteWithMostVotes()]} votes <br />
+
     </div>
   )
 }
