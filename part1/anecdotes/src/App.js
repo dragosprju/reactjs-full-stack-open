@@ -6,8 +6,16 @@ const App = () => {
   }
   
   function setRandomAnecdote() {
-    let max = anecdotes.length
+    const max = anecdotes.length
     setAnecdote(getRandomInt(max))
+  }
+
+  function increaseVote() {
+    const noOfVotesNew = { ...noOfVotes }
+
+    noOfVotesNew[selected] += 1
+
+    setNoOfVotes(noOfVotesNew)
   }
 
   const anecdotes = [
@@ -21,12 +29,16 @@ const App = () => {
   ]
    
   const [selected, setAnecdote] = useState(0)
+  const [noOfVotes, setNoOfVotes] = useState(new Array(anecdotes.length).fill(0))
 
   return (
     <div>
       {anecdotes[selected]} <br />
+      has {noOfVotes[selected]} votes <br />
 
+      <button onClick={increaseVote}>vote</button>
       <button onClick={setRandomAnecdote}>next anecdote</button>
+      
     </div>
   )
 }
