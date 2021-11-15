@@ -13,10 +13,24 @@
         },
         {
             "command": "react-scripts start",
+            "name": "part1/courseinfo",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/part1/courseinfo"  
+        },
+        {
+            "command": "react-scripts start",
             "name": "part1/unicafe",
             "request": "launch",
             "type": "node-terminal",
             "cwd": "${workspaceFolder}/part1/unicafe"  
+        },
+        {
+            "command": "react-scripts start",
+            "name": "part2/courseinfo",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/part2/courseinfo"  
         },
         {
             "type": "pwa-chrome",
