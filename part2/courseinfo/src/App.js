@@ -1,5 +1,5 @@
 import React from 'react'
-import Course from './Course'
+import Course from './components/Course'
 
 const App = () => {
     const course = {
@@ -24,7 +24,6 @@ const App = () => {
       ]
     }
   
-    console.log("App: ", course)
     return <Course course={course} />
   }
 

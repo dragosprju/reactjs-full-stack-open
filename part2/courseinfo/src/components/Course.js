@@ -3,16 +3,8 @@ import Header from './Header'
 import Content from './Content'
 import Total from './Total'
 
-const Course = ({id, name, parts}) => {
-    console.log("Course: ", id)
-    //console.log(course)
-    console.log("Course: ", name)
-    console.log("Course: ", parts)
-    //console.log(other)
-    
-    // let id = course.id
-    // let name = course.name
-    // let parts = course.parts
+const Course = ({course}) => {
+    let {id, name, parts} = course
 
     return (
         <div key={id}>

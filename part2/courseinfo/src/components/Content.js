@@ -1,9 +1,7 @@
 import React from 'react'
 import Part from './Part'
 
-const Content = (parts) => {
-    //console.log(parts)
-    
+const Content = ({parts}) => {    
     return (
       <div>  
         {

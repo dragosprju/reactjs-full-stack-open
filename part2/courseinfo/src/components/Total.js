@@ -1,9 +1,7 @@
 import React from 'react'
 
-const Total = (parts) => {
-    //console.log(parts)
-
-    const sum = parts.reduce((a, b) => (a.exercises + b.exercises))
+const Total = ({parts}) => {
+    const sum = parts.reduce((sum, part) => (sum + part.exercises), 0)
 
     return (
       <p>Number of exercises {sum}</p>
