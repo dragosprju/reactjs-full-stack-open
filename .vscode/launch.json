@@ -33,6 +33,13 @@
             "cwd": "${workspaceFolder}/part2/courseinfo"  
         },
         {
+            "command": "react-scripts start",
+            "name": "part2/phonebook",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/part2/phonebook"  
+        },
+        {
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome",
