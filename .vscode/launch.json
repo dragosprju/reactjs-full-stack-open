@@ -5,35 +5,35 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "react-scripts start",
+            "command": "npm run start",
             "name": "part1/anecdotes",
             "request": "launch",
             "type": "node-terminal",
             "cwd": "${workspaceFolder}/part1/anecdotes"  
         },
         {
-            "command": "react-scripts start",
+            "command": "npm run start",
             "name": "part1/courseinfo",
             "request": "launch",
             "type": "node-terminal",
             "cwd": "${workspaceFolder}/part1/courseinfo"  
         },
         {
-            "command": "react-scripts start",
+            "command": "npm run start",
             "name": "part1/unicafe",
             "request": "launch",
             "type": "node-terminal",
             "cwd": "${workspaceFolder}/part1/unicafe"  
         },
         {
-            "command": "react-scripts start",
+            "command": "npm run start",
             "name": "part2/courseinfo",
             "request": "launch",
             "type": "node-terminal",
             "cwd": "${workspaceFolder}/part2/courseinfo"  
         },
         {
-            "command": "react-scripts start",
+            "command": "npm run start",
             "name": "part2/phonebook",
             "request": "launch",
             "type": "node-terminal",
